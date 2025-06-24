@@ -14,7 +14,7 @@ public class StudentAdapter implements StudentRepository {
 
     @Override
     public Student findById(String uid) {
-        String url = "http://localhost:8081/api/v1/instituto/student/" + uid;
+        String url = "http://localhost:8082/api/v1/instituto/student/" + uid;
         StudentData studentData = restTemplate.getForObject(url, StudentData.class);
         return StudentMapper.MAPPER.toDomain(studentData);
     }

@@ -16,7 +16,7 @@ public class ProfesorAdapter implements ProfesorRepository {
 
     @Override
     public Profesor findById(String uid) {
-        String url = "http://localhost:8082/api/v1/instituto/profesor/" + uid;
+        String url = "http://localhost:8081/api/v1/instituto/profesor/" + uid;
         ProfesorData profesorData = restTemplate.getForObject(url, ProfesorData.class);
         return ProfesorMapper.MAPPER.toModel(profesorData);
     }
